@@ -675,6 +675,135 @@
         }
 
         /* ═══════════════════════════════════════
+           FOOD UPDATE SECTION
+           ═══════════════════════════════════════ */
+        .food-section {
+            background: linear-gradient(135deg, rgba(46,125,50,0.95) 0%, rgba(76,175,80,0.9) 100%);
+            color: white;
+            padding: var(--section-pad) 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .food-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 50%, rgba(255,213,79,0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .food-badge {
+            display: inline-block;
+            background: rgba(255,255,255,0.15);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.25);
+            color: var(--gold-light);
+            font-family: var(--font-body);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.5rem 1.5rem;
+            border-radius: 3rem;
+            margin-bottom: 1.5rem;
+            animation: fadeInDown 0.8s ease;
+        }
+
+        .food-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+            color: white;
+            line-height: 1.2;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+            animation: fadeInDown 0.8s ease 0.1s both;
+        }
+
+        .food-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .food-text p {
+            font-size: 1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+
+        .food-intro {
+            font-size: 1.1rem;
+            font-weight: 600;
+        }
+
+        .food-warning {
+            background: rgba(255,255,255,0.12);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 1.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+
+        .warning-title {
+            font-size: 1.05rem;
+            font-weight: 700;
+            margin-bottom: 0.8rem;
+        }
+
+        .warning-desc {
+            font-size: 0.95rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .warning-benefit {
+            font-size: 0.95rem;
+            opacity: 0.9;
+        }
+
+        .food-closing {
+            font-size: 0.95rem;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+
+        .food-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            animation: fadeInRight 0.8s ease 0.2s both;
+        }
+
+        .food-image {
+            border-radius: 1.5rem;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            transition: all 0.4s ease;
+            aspect-ratio: 1;
+        }
+
+        .food-image:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
+        }
+
+        .food-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* ═══════════════════════════════════════
            WHAT TO EXPECT
            ═══════════════════════════════════════ */
         .expect {
@@ -1044,6 +1173,14 @@
                 margin-top: 1.5rem;
             }
 
+            .food-content {
+                grid-template-columns: 1fr;
+            }
+
+            .food-images {
+                margin-top: 1.5rem;
+            }
+
             .about-grid {
                 grid-template-columns: 1fr 1fr;
                 gap: 2rem;
@@ -1215,6 +1352,29 @@
             .announcement-image {
                 max-width: 100%;
                 min-width: 200px;
+            }
+
+            .food-section {
+                padding: 2.5rem 1.5rem;
+            }
+
+            .food-title {
+                font-size: clamp(1.5rem, 6vw, 2.5rem);
+                margin-bottom: 1.5rem;
+            }
+
+            .food-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .food-text p {
+                font-size: 0.9rem;
+            }
+
+            .food-images {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
             .hero { padding: 4.5rem 1rem 2.5rem; }
@@ -1429,6 +1589,40 @@
                     </div>
                     <div class="announcement-image">
                         <img src="669835961_10224101682648846_7444294197273996328_n.jpg" alt="নামছাড়া ব্যান্ড">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════ FOOD UPDATE ════════ -->
+    <section class="food-section">
+        <div class="container">
+            <div class="food-badge">🍛 খাবারের আপডেট 🍛</div>
+            <h2 class="food-title">ক্লাউড কিচেনের সুস্বাদু বাংলাদেশি খাবার</h2>
+
+            <div class="food-content">
+                <div class="food-text">
+                    <p class="food-intro">ইভেন্টে ক্লাউড কিচেন থেকে সুস্বাদু বাংলাদেশি খাবারের ব্যবস্থা থাকবে। বিভিন্ন জনপ্রিয় ও পছন্দের আইটেম পাওয়া যাবে ক্রয়ের জন্য।</p>
+
+                    <div class="food-warning">
+                        <p class="warning-title">⚠️ গুরুত্বপূর্ণ পরামর্শ:</p>
+                        <p class="warning-desc">অংশগ্রহণকারীর সংখ্যা বেশি এবং ভিড় হওয়ার সম্ভাবনা থাকায়, ইভেন্টের দিন যাতে খাবার না পেয়ে সমস্যায় না পড়েন, সে জন্য আগে থেকেই ক্লাউড কিচেন থেকে প্রি-অর্ডার করার জন্য জোরালোভাবে পরামর্শ দেওয়া হচ্ছে।</p>
+                        <p class="warning-benefit">👉 এতে করে আপনি নিশ্চিন্তে আপনার পছন্দের খাবার উপভোগ করতে পারবেন, অপেক্ষা বা অনিশ্চয়তা ছাড়াই।</p>
+                    </div>
+
+                    <p class="food-closing">আমাদের লক্ষ্য হলো আপনাদের জন্য একটি সুন্দর, আনন্দময় এবং সুশৃঙ্খল বৈশাখী আয়োজন তৈরি করা। আপনাদের সহযোগিতা আমাদের জন্য অত্যন্ত গুরুত্বপূর্ণ ❤️</p>
+                </div>
+
+                <div class="food-images">
+                    <div class="food-image">
+                        <img src="stalls/669372457_26833557502904361_3706235433724154516_n.jpg" alt="বাংলাদেশি খাবার">
+                    </div>
+                    <div class="food-image">
+                        <img src="stalls/670315089_122133884451034244_499010855841674651_n.jpg" alt="খাবারের আয়োজন">
+                    </div>
+                    <div class="food-image">
+                        <img src="stalls/670844752_26831884469738331_7065213469567211800_n.jpg" alt="খাবার স্টল">
                     </div>
                 </div>
             </div>
